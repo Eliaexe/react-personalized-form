@@ -4,7 +4,7 @@ import Select from "react-select";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-export default function Modal(props) {
+export default function Form(props) {
   const formStructure = props.input;
   const [selectedOption, setSelectedOption] = useState(null);
   const [inputDate, setInputDate] = useState([]);
@@ -91,6 +91,7 @@ export default function Modal(props) {
   
     return (
       <div className="input-wrapper" key={metadata} data-name={name} data-type={'select'}>
+        <label htmlFor={metadata}>{name}</label>
         <Select
           defaultValue={selectedOption}
           onChange={setSelectedOption}
@@ -128,3 +129,4 @@ export default function Modal(props) {
     </section>
   );
 }
+
