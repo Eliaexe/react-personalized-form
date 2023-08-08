@@ -1,26 +1,62 @@
-    # React personalized form
+# react-personalized-form
 
-    Make your form direcly whit a React component!
+A simple npm package for creating dynamic forms in your React App.
 
-    ```javascript React
-    <Form 
-    modalName={'Create Employee'} 
+## Installation
+Run the following command in your terminal:
+
+```bash
+npm install react-personalized-form
+
+or
+
+yarn add react-personalized-form
+```
+
+## Usage
+```jsx
+import { Form } from "react-personalized-form";
+
+<Form 
+    modalName={'People Form'} 
     input={{
-        'First Name': [true,'text'],
-        'Last Name': [true, 'text'],
-        'Date of Birth': [true, 'date'],
-        'Start Date': [true, 'date'],
-        'Street': [true, 'text'],
-        'City': [true, 'text'],
-        'State': [true, 'select', statesName],
-        'Zip Code': [true, 'number'],
-        'Department': [true, 'select', department],
+    'First Name': [true,'text'],
+    'Last Name': [true, 'text'],
+    'Date of Birth': [true, 'date'],
+    'City': [true, 'text'],
+    'State': [true, 'select', statesName],
+    'Zip Code': [true, 'number'],
     }}
     submitButton={'Save'}
     onSubmit={handleSubmitForm}
-    />
+/>    
+```
 
-    In the input you need to give:
-        'The input name': ['is required?', 'type of input', 'list of options for select']
+## Props Usage
 
-    We need the list of option only for select input!! The list must be an array!! 
+ modalName:
+   - The title of the form.
+
+ input:
+   - An object that defines the input fields in the form. The keys are the input names, and the values are arrays with the following structure:
+     - [0]: Boolean indicating if the input is required (true or false).
+     - [1]: Input type ('text', 'number', 'date', or 'select').
+     - [2] (if input type is 'select'): Array of options for the select input.
+
+ submitButton:
+   - The text to display on the submit button.
+
+ onSubmit:
+   - A function that handles the form data when submitted.
+
+## Styling
+
+The package provides simple classes for styling:
+
+- modal: To select the container of the form
+- form: To select the form element.
+- input-wrapper: To select the container of the label and input.
+- save-button: To select the submit button.
+
+## Contributors
+Developed by eliaexe
